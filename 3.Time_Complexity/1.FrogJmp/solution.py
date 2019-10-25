@@ -1,22 +1,7 @@
-# Correct, but does not scale well
-def solution(X, Y, D):
-    # Assumptions on X, Y and D
-    # * X, Y and D are integers within the range [1..1,000,000,000];
-    # * X ≤ Y.
-    jumps = 0
-    max_jumps = 1000000000
-    # We are already at the final destination
-    if X != Y:
-        # Brute force: loop
-        X_jumps = X
-        for x in range(0,max_jumps):
-            X_jumps += D
-            if X_jumps >= Y:
-                jumps = x+1
-                break
-    return jumps
-
-# Much better solution
+# If the distance to be jumped is a multiple of D, which we check with the
+# function modulo (%), then (Y - X) / D gives us the number of jumps needed.
+# Otherwise, the number of jumps is (Y - X) / D  (rounded to the closest integer
+# from below) plus one extra step.
 import math
 def solution(X, Y, D):
     jumps = 0
