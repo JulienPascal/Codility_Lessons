@@ -1,5 +1,5 @@
-#A = [1, 3, 1, 4, 2, 3, 5, 4]
-# I am using Python set module. The set l_current stores the leaves already in
+# A = [1, 3, 1, 4, 2, 3, 5, 4]
+# I am using Python sets module. The set l_current stores the leaves already in
 # place at time k. The set l_needed is the minimal set of leaves needed to cross
 # the river. When the two set are equal, it's time to cross the river
 def solution(X, A):
